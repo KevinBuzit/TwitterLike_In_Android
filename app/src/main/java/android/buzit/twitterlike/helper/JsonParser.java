@@ -1,5 +1,6 @@
 package android.buzit.twitterlike.helper;
 
+import android.buzit.twitterlike.model.Contact;
 import android.buzit.twitterlike.model.Message;
 
 import org.json.JSONArray;
@@ -26,6 +27,20 @@ public class JsonParser {
         }
 
         return messages;
+    }
+
+    public static List<Contact> getContact(String json) throws JSONException {
+        List<Contact> contacts = new LinkedList<>();
+        JSONArray array = new JSONArray(json);
+        JSONObject obj;
+        Contact ctc;
+        for(int i=0; i < array.length(); i++){
+            obj = array.getJSONObject(i);
+            ctc = new Contact(obj.optString("username"), obj.optString("pwd"), obj.optString("url"));
+            contacts.add(ctc);
+        }
+
+        return contacts;
     }
 
     public static String getToken(String response) throws JSONException {

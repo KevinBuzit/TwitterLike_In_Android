@@ -2,6 +2,7 @@ package android.buzit.twitterlike;
 
 import android.buzit.twitterlike.helper.NetworkHelper;
 import android.buzit.twitterlike.model.HttpResult;
+import android.buzit.twitterlike.model.Session;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             if(s != null){
                 Intent i = new Intent(MainActivity.this, TchatActivity.class);
-                i.putExtra(TchatActivity.Token, s);
+                Session.getInstance().setToken(s);
                 startActivity(i);
             }
             else{

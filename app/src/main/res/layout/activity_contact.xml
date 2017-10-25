@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="android.buzit.twitterlike.TchatActivity">
+    tools:context="android.buzit.twitterlike.ContactActivity">
 
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        class="android.buzit.twitterlike.fragment.MessagesFragment"
-        android:id="@+id/frag_chat" />
+        class="android.buzit.twitterlike.fragment.ContactFragment"
+        android:id="@+id/frag_contact" />
+
 </RelativeLayout>

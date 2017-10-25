@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="horizontal"
     android:layout_height="match_parent"
     tools:context="android.buzit.twitterlike.TchatActivity">
 
     <fragment
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         class="android.buzit.twitterlike.fragment.MessagesFragment"
         android:id="@+id/frag_chat" />
-</RelativeLayout>
+
+    <fragment
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="android.buzit.twitterlike.fragment.ContactFragment"
+        android:id="@+id/frag_contact" />
+</LinearLayout>
